@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My startapp</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    /* Navigation Bar with Flexbox */
+    nav {
+      background: #333;
+      padding: 1rem;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Content with Grid */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+
+    .content {
+      background: #f4f4f4;
+      padding: 1.5rem;
+      border-radius: 5px;
+    }
+
+    .sidebar {
+      background: #e0e0e0;
+      padding: 1.5rem;
+      border-radius: 5px;
+    }
+
+    .content-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .content-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 5px;
+      flex: 1 1 calc(50% - 1rem);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Media Queries */
+    /* Mobile: up to 600px */
+    @media (max-width: 600px) {
+      main {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .nav-links li {
+        margin: 0.5rem 0;
+      }
+
+      .content-item {
+        flex: 1 1 100%;
+      }
+    }
+
+    /* Tablet: 601px to 900px */
+    @media (min-width: 601px) and (max-width: 900px) {
+      main {
+        grid-template-columns: 3fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .content-item {
+        flex: 1 1 calc(50% - 1rem);
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .nav-links li {
+        margin-left: 1rem;
+      }
+    }
+
+    /* Desktop: above 900px */
+    @media (min-width: 901px) {
+      main {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">MyStartup</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="content">
+      <h1>Welcome to Our Startup</h1>
+      <p>We specialize in web building.</p>
+      <div class="content-items">
+        <div class="content-item">
+          <h3>Responsive Websites</h3>
+          <p>We create responsive websites.</p>
+        </div>
+        <div class="content-item">
+          <h3>Dyanamic Website</h3>
+          <p>We can create for you dynamic websites.</p>
+        </div>
+      </div>
+    </section>
+    <aside class="sidebar">
+      <h2>More Features</h2>
+      <p>Here you will find more about our works.</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© 2025 MyStartup.</p>
+  </footer>
+</body>
+</html>
